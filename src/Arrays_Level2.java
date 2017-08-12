@@ -23,5 +23,30 @@ has22([2, 1, 2]) → false
 		  
 		  return false;
 		}
+/* Problem #2
+Given an array of ints, return true if the array contains no 1's and no 3's.
 
+lucky13([0, 2, 4]) → true
+lucky13([1, 2, 3]) → false
+lucky13([1, 2, 4]) → false
+ */
+	
+	public static boolean lucky13(int[] nums) {
+		  boolean noOne = true;
+		  boolean noThree = true;
+		  
+		  for(int i=0; i< nums.length; i++)
+		  {
+		    if(nums[i] == 1)
+		      noOne = false;
+		    else if (nums[i] == 3)
+		      noThree = false;
+		  }
+		  
+		  if(noOne && noThree)
+		    return true;
+		  else
+		  return false;
+		    
+		}
 }// end of Arrays_Level2
