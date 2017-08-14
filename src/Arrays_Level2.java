@@ -159,6 +159,32 @@ isEverywhere([1, 2, 1, 3, 4], 1) → false
 		  
 		  return true;
 		}
+
+/* Problem #8
+ Given an array of ints, return true if the array contains a 2 next to a 2 or a 4 next to a 4, but not both.
+
+either24([1, 2, 2]) → true
+either24([4, 4, 1]) → true
+either24([4, 4, 1, 2, 2]) → false	
+ */
+	public boolean either24(int[] nums) {
+		  int twos = 0;
+		  int fours = 0;
+		  
+		  for(int i=1; i< nums.length; i++)
+		  {
+		    if(nums[i] == nums[i-1])
+		    {
+		      if(nums[i] == 2) 
+		        twos++;
+		      else if(nums[i] == 4)
+		        fours++;
+		    }
+		  }
+		  
+		  return (twos > fours || fours > twos);
+		}
+
 	
 	
 	
