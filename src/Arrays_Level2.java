@@ -113,8 +113,33 @@ only14([1, 1]) → true
 		  return true;
 		}
 
-	
-	
+/*Problem #6
+ Given an array of ints, return true if it contains no 1's or it contains no 4's.
+
+no14([1, 2, 3]) → true
+no14([1, 2, 3, 4]) → false
+no14([2, 3, 4]) → true
+ */
+	public static boolean no14(int[] nums) {
+		  int ones = 0;
+		  int fours = 0;
+		  
+		  for(int i=0; i< nums.length; i++)
+		  {
+		    if(nums[i] == 1){ 
+		      ones++;
+		    }
+		    else if(nums[i] == 4){
+		      fours++;
+		    }
+		  }
+		  
+		  if(ones == 0 || fours == 0)
+		    return true;
+		  
+		  return false;
+		}
+
 	
 	
 	
