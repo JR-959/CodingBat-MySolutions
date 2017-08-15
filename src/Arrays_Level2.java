@@ -223,8 +223,93 @@ has77([1, 7, 1, 1, 7]) → false
 		  
 		  return false;
 		}
+/* Problem #11   
+Given an array of ints, return true if there is a 1 in the array with a 2 somewhere later in the array.
 
-	
+has12([1, 3, 2]) → true
+has12([3, 1, 2]) → true
+has12([3, 1, 4, 5, 2]) → true
+ */
+	public static boolean has12(int[] nums) {
+		  int one = 99;
+		  int two = 0;
+		  
+		  for(int i=0; i< nums.length; i++)
+		  {
+		    if(nums[i] == 1)
+		      one = i;
+		    if(nums[i] == 2)
+		      two = i;
+		    
+		    if(two != 0 && one< two)
+		      return true;
+		  }
+		  
+		  return false;
+		}
+
+/*Problem #12
+Given an array of ints, return true if the array contains either 3 even or 3 odd values all next to each other.
+
+modThree([2, 1, 3, 5]) → true
+modThree([2, 1, 2, 5]) → false
+modThree([2, 4, 2, 5]) → true	
+*/
+	public static boolean modThree(int[] nums) {
+		  for(int i=2; i< nums.length; i++)
+		  {
+		    if(nums[i-1]%2 == 1 && nums[i-2]%2 == 1 && nums[i]%2 == 1)
+		      return true;
+		    
+		    if(nums[i-1]%2 == 0 && nums[i-2]%2 == 0 && nums[i]%2 == 0) 
+		      return true;
+		  }
+		  
+		  return false;
+		}
+
+/*Problem #13  	
+Return true if the array contains, somewhere, three increasing adjacent numbers like .... 4, 5, 6, ... or 23, 24, 25.
+
+tripleUp([1, 4, 5, 6, 2]) → true
+tripleUp([1, 2, 3]) → true
+tripleUp([1, 2, 4]) → false
+*/
+	public static boolean tripleUp(int[] nums) {
+
+		if(nums.length >2)
+		{
+		  for(int i=0; i< nums.length-2; i++)
+		  {
+		    if((nums[i+1] - nums[i]) == 1 && (nums[i+2] - nums[i+1]) == 1)
+		      return true;
+		  }
+		}
+		  
+		  return false;
+		}
+
+/*Problem #14
+Return an array that is "left shifted" by one -- so {6, 2, 5, 3} returns {2, 5, 3, 6}. You may modify and return the given array, or return a new array.
+
+shiftLeft([6, 2, 5, 3]) → [2, 5, 3, 6]
+shiftLeft([1, 2]) → [2, 1]
+shiftLeft([1]) → [1]
+ */
+	public static int[] shiftLeft(int[] nums) {
+		  for(int i=0; i< nums.length -1; i++)
+		  {
+		    int temp = nums[i];
+		    nums[i] = nums[i+1];
+		    nums[i+1] = temp;
+		  }
+		  
+		  return nums;
+		}
+
+/* Problem #15
+  
+ */
 	
 	
 	
