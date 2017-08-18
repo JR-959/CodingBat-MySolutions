@@ -166,6 +166,26 @@ array11([1, 2, 3, 4], 0) → 0
 		  }
 		}
 
+/* Problem #10  
+Given an array of ints, compute recursively if the array contains somewhere a value followed in the array by that value times 10. We'll use the convention of considering only the part of the array that begins at the given index. In this way, a recursive call can pass index+1 to move down the array. The initial call will pass in index as 0.
+
+array220([1, 2, 20], 0) → true
+array220([3, 30], 0) → true
+array220([3], 0) → false
+ */
+	public static boolean array220(int[] nums, int index) {
+		  if(index+1 >= nums.length)      //base case
+		    return false;
+		  
+		  if((nums[index+1]/10) == nums[index] && (nums[index+1]%10) == 0)
+		    return true;
+		  else
+		  {
+		    index++;
+		    return array220(nums,index);
+		  }
+		}
+	
 }// end of Recursion_Level1.java	
 
 
