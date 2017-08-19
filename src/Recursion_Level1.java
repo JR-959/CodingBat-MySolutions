@@ -186,6 +186,88 @@ array220([3], 0) → false
 		  }
 		}
 	
+/* Problem #11	
+Given a string, compute recursively a new string where all the adjacent chars are now separated by a "*".
+
+allStar("hello") → "h*e*l*l*o"
+allStar("abc") → "a*b*c"
+allStar("ab") → "a*b"
+ */
+	
+	public static String allStar(String str) {
+		  if(str.length() == 0)
+		    return "";
+		  else if(str.length() == 1)
+		    return str; 
+		  else  
+		    return str.substring(0,1) + "*" + allStar(str.substring(1));
+		}
+
+/*Problem #12
+ Given a string, compute recursively a new string where identical chars that are adjacent in the original string are separated from each other by a "*".
+
+pairStar("hello") → "hel*lo"
+pairStar("xxyy") → "x*xy*y"
+pairStar("aaaa") → "a*a*a*a" 	
+ */
+	public String pairStar(String str) {
+		  
+		  if(str.length() <= 1)
+		    return str;
+		  else if(str.charAt(0) == str.charAt(1))
+		    return str.substring(0,1) + "*" + pairStar(str.substring(1));
+		  else
+		    return str.substring(0,1) + pairStar(str.substring(1));
+		}
+	
+/*Problem #13 	
+Given a string, compute recursively a new string where all the lowercase 'x' chars have been moved to the end of the string.
+
+endX("xxre") → "rexx"
+endX("xxhixx") → "hixxxx"
+endX("xhixhix") → "hihixxx"
+*/
+	public String endX(String str) {
+		  if(str.length() == 0)
+		    return str;
+		  else if(str.substring(0,1).equals("x"))
+		    return endX(str.substring(1)) + str.substring(0,1);
+		  else
+		    return str.substring(0,1) + endX(str.substring(1));
+		}
+
+/* Problem #14
+We'll say that a "pair" in a string is two instances of a char separated by a char. So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x. Recursively compute the number of pairs in the given string.
+
+countPairs("axa") → 1
+countPairs("axax") → 2
+countPairs("axbx") → 1	
+*/
+	public static int countPairs(String str) {
+		  if(str.length() < 3 )
+		    return 0;
+		  else if(str.charAt(0) == str.charAt(2))
+		    return 1 + countPairs(str.substring(1));
+		  else
+		    return countPairs(str.substring(1));
+		}
+
+/* Problem #15
+Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
+
+countAbc("abc") → 1
+countAbc("abcxxabc") → 2
+countAbc("abaxxaba") → 2
+*/
+	public int countAbc(String str) {
+		  if(str.length() < 3)
+		    return 0;
+		  else if(str.substring(0,3).equals("abc") || str.substring(0,3).equals("aba"))
+		    return 1 + countAbc(str.substring(1));
+		  else
+		    return countAbc(str.substring(1));
+		}
+
 }// end of Recursion_Level1.java	
 
 
