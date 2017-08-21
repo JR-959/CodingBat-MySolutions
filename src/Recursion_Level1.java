@@ -278,7 +278,7 @@ count11("abc11x11x11") → 3
 count11("111") → 1
  */
 
-public int count11(String str) {
+public static int count11(String str) {
 	  if(str.length() < 2)
 	    return 0;
 	  else if(str.substring(0,2).equals("11"))
@@ -296,7 +296,7 @@ stringClean("yyzzza") → "yza"
 stringClean("abbbcdd") → "abcd"
 stringClean("Hello") → "Helo" 
 */
-public String stringClean(String str) {
+public static String stringClean(String str) {
 	  if(str.length() == 0)
 	    return "";
 	  else if(str.length() > 1 && str.substring(0,1).equals(str.substring(1,2)))
@@ -312,7 +312,7 @@ countHi2("ahixhi") → 1
 countHi2("ahibhi") → 2
 countHi2("xhixhi") → 0
  */
-	public int countHi2(String str) {
+	public static int countHi2(String str) {
 	  if(str.length() < 2)
 	    return 0;
 	  else if(str.substring(0,1).equals("x") && !(str.substring(1,2).equals("x")))
@@ -324,10 +324,33 @@ countHi2("xhixhi") → 0
 	  
 	}
 
-/* Problem #19
- 
+/* Problem #19 -----> My solution works just fine. However, there is a much simpler solution to this problem provided by the website.
+Given a string that contains a single pair of parenthesis, compute recursively a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(abc)".
+
+parenBit("xyz(abc)123") → "(abc)"
+parenBit("x(hello)") → "(hello)"
+parenBit("(xy)1") → "(xy)"
  */
-	
+	public static String parenBit(String str) {
+		  if(str.length() == 0)
+		    return "";
+		  else if(str.substring(0,1).equals("("))
+		  {
+		    String aWord = "";
+		    int i = 0;
+		    while(!(str.substring(i, i+1).equals(")" )))
+		    {
+		      aWord += str.charAt(i); 
+		      i++;
+		    }
+		    
+		    return aWord + ")";
+		  }
+		  else
+		    return parenBit(str.substring(1));
+		    
+		}
+
 	
 }// end of Recursion_Level1.java	
 
