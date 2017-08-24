@@ -42,5 +42,42 @@ altPairs("CodingHorror") → "Congrr"
 		  return newOne;
 		}
 
+/* Problem #3 
+Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+
+countXX("abcxx") → 1
+countXX("xxx") → 2
+countXX("xxxx") → 3
+ */
+	
+	int countXX(String str) {
+		  int xS = 0;
+		  for(int i=0; i<str.length()-1; i++)
+		  {
+		    if(str.charAt(i) == 'x' && str.charAt(i+1) == 'x')
+		      xS++;
+		  }
+		  
+		  return xS;
+		}
+
+/* Problem #4 
+Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+stringX("xxHxix") → "xHix"
+stringX("abxxxcd") → "abcd"
+stringX("xabxxxcdx") → "xabcdx"
+ */
+	public String stringX(String str) {
+		  String newOne = "";
+		  for(int i=0; i< str.length(); i++)
+		  {
+		    if(str.charAt(i) == 'x' && (i>0 && i< str.length()-1))
+		    {}  //empty block: no action
+		    else
+		      newOne += str.charAt(i);
+		  }
+		  return newOne;
+		}
 	
 }
