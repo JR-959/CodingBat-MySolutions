@@ -145,7 +145,29 @@ public boolean xyBalance(String str) {
 	}
 
 /* Problem #8
- 
+Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, the second char of b, and so on. Any leftover chars go at the end of the result.
+
+mixString("abc", "xyz") → "axbycz"
+mixString("Hi", "There") → "HTihere"
+mixString("xxxx", "There") → "xTxhxexre" 
+*/
+
+public String mixString(String a, String b) {
+	  String newOne = "";
+	  int length = Math.min(a.length(), b.length());
+	  for(int i=0; i< length; i++)
+	  {
+	    newOne+= a.charAt(i);
+	    newOne+= b.charAt(i);
+	  }
+	    newOne += a.substring(length);
+	    newOne += b.substring(length);
+	  
+	  return newOne;
+	}
+
+/* Problem #9
+* 
 */
 	
 }// end of Strings_Level3 Class
