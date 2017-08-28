@@ -184,5 +184,47 @@ public String repeatFront(String str, int n) {
 	  return newOne;
 	}
 
+/* Problem #10
+Given two strings, word and a separator sep, return a big string made of count occurrences of the word, separated by the separator string.
+
+repeatSeparator("Word", "X", 3) → "WordXWordXWord"
+repeatSeparator("This", "And", 2) → "ThisAndThis"
+repeatSeparator("This", "And", 1) → "This"
+*/
+public String repeatSeparator(String word, String sep, int count) {
+	  
+	  if(count == 0)
+	    return "";
+	  else
+	  {
+	    String newStr = word;
+	    for(int i=1; i < count; i++)
+	    {
+	      newStr+= sep;
+	      newStr+= word;
+	    }
+	    return newStr;
+	  }
+	}
+
+/* Problem #11
+ * 
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 }// end of Strings_Level3 Class
