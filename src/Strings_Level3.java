@@ -280,6 +280,33 @@ public String oneTwo(String str) {
 	}
 
 
+/*Problem #13
+Look for patterns like "zip" and "zap" in the string -- length-3, starting with 'z' and ending with 'p'. Return a string where for all such words, the middle letter is gone, so "zipXzap" yields "zpXzp".
+
+zipZap("zipXzap") → "zpXzp"
+zipZap("zopzop") → "zpzp"
+zipZap("zzzopzop") → "zzzpzp"
+*/
+public String zipZap(String str) {
+	  
+	  String newStr = "";
+	  for(int i=0;i < str.length();)
+	  {
+	    if(i+2 < str.length() && str.charAt(i) == 'z' && str.charAt(i+2) == 'p')
+	    { 
+	      newStr +=str.charAt(i);
+	      newStr +=str.charAt(i+2);
+	      i= i +3;
+	    }
+	    else
+	    {
+	      newStr += str.charAt(i);
+	      i++;
+	    }
+	  }
+	  
+	  return newStr;
+	}
 
 
 
