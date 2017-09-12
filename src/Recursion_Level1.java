@@ -398,6 +398,36 @@ count8(8818) → 4
 		    return count8(n/10);
 		}
 
+/* Problem #21  
+Given a string, return true if it is a nesting of zero or more pairs of parenthesis, like "(())" or "((()))". Suggestion: check the first and last chars, and then recur on what's inside them.
+
+nestParen("(())") → true
+nestParen("((()))") → true
+nestParen("(((x))") → false
+*/
+	
+	public boolean nestParen(String str) {
+		  if(str.length() >= 1)
+		        {
+		            
+		            char first = str.charAt(0);
+		            char last = str.charAt(str.length()-1);
+
+		            if(first == '(' && last == ')') {
+		                String cut = str.substring(1,str.length()-1);
+		                return nestParen(cut);
+		            }
+		            else
+		                return false;
+		        }
+
+		  return true;
+		}
+	
+/*Problem #22
+ 
+*/
+	
 	
 }// end of Recursion_Level1.java	
 
