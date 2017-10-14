@@ -12,20 +12,19 @@ in the browser, and there's lots of them to build up those skills.
 
 ## Sample Challenge
 ```
-/*
-	 * Problem #7 Given a string, compute recursively a new string where all the 'x'
-	 * chars have been removed.
-	 * 
-	 * noX("xaxb") → "ab" 
-	 * noX("abc") → "abc" 
-	 * noX("xx") → ""
-	 */
-	public static String noX(String str) {
-		if (str.length() == 0)
-			return "";
-		else if (str.substring(0, 1).equals("x"))
-			return noX(str.substring(1));
-		else
-			return str.substring(0, 1) + noX(str.substring(1));
-	}
+ * Problem #7 Given a string, compute recursively a new string where all the 'x'
+ * chars have been removed.
+ * 
+ * noX("xaxb") → "ab" 
+ * noX("abc") → "abc" 
+ * noX("xx") → ""
+ */
+public static String noX(String str) {
+	if (str.length() == 0)
+		return "";
+	else if (str.substring(0, 1).equals("x"))
+		return noX(str.substring(1));
+	else
+		return str.substring(0, 1) + noX(str.substring(1));
+}
 ```
