@@ -12,6 +12,7 @@ in the browser, and there's lots of them to build up those skills.
 
 ## Sample Challenge
 ```
+ /*
  * Problem #7 Given a string, compute recursively a new string where all the 'x'
  * chars have been removed.
  * 
@@ -28,3 +29,7 @@ public static String noX(String str) {
 		return str.substring(0, 1) + noX(str.substring(1));
 }
 ```
+## Topics of the challenges in this repository include:
+* Array Manipulation
+* String Manipulation
+* Recursion
